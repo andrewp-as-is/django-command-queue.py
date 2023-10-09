@@ -46,7 +46,7 @@ class Command(BaseCommand):
             Queue(name='command_name2').save()
 ```
 
-queue processing without worker/loop
+queue processing without worker/endless loop
 ```bash
 python manage.py command_queue
 ```
