@@ -4,6 +4,7 @@ from django.core.management.base import BaseCommand
 from ...models import Queue
 
 class Command(BaseCommand):
+    help = "Command queue processing"
 
     def handle(self,*args,**options):
         for queue in Queue.objects.all():

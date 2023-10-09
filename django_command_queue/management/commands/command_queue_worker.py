@@ -9,6 +9,7 @@ COMMAND_WORKER_RESTART = getattr(settings,'COMMAND_WORKER_RESTART',0)
 COMMAND_WORKER_SLEEP = getattr(settings,'COMMAND_WORKER_SLEEP',0.1)
 
 class Command(BaseCommand):
+    help = "Command queue worker"
 
     def handle(self,*args,**options):
         while True:
