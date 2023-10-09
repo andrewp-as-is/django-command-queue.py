@@ -27,12 +27,7 @@ model|fields/columns
 +   customizable with `command_queue_sleep.py`
 
 ### Examples
-queue processing
-```bash
-python manage.py command_queue
-```
-
-queue worker/endless loop
+queue worker/Docker `entrypoint`
 ```bash
 python manage.py command_queue_worker
 ```
@@ -49,5 +44,10 @@ class Command(BaseCommand):
         if todo:
             Queue(name='command_name1').save()
             Queue(name='command_name2').save()
+```
+
+queue processing without worker/loop
+```bash
+python manage.py command_queue
 ```
 
